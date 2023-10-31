@@ -50,15 +50,15 @@ lspci -m | egrep "uPD720201|uPD720202" | while read device trailer; do
 		echo -n 0000:$device > /sys/bus/pci/drivers/xhci_hcd/bind
 	fi
 
-	sleep 2
+	#sleep 2
 
-	echo 1 > "/sys/bus/pci/devices/0000:$device/remove"
+	#echo 1 > "/sys/bus/pci/devices/0000:$device/remove"
 	echo "Done with $device"
 done
 
-sleep 1
+#sleep 1
 
-echo 1 > /sys/bus/pci/rescan
+#echo 1 > /sys/bus/pci/rescan
 
 echo "Done with all devices"
 
